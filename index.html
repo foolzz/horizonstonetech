@@ -32,6 +32,9 @@
 </head>
 <body>
 
+<!-- Particle network background -->
+<canvas id="particle-network" aria-hidden="true"></canvas>
+
 <!-- ============================================================ -->
 <!-- Nav -->
 <!-- ============================================================ -->
@@ -66,7 +69,7 @@
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
-      <div>
+      <div class="reveal">
         <div class="eyebrow eyebrow-accent">
           <span class="eyebrow-rule"></span>
           AI Engineering — Est. Richmond Hill, ON
@@ -88,22 +91,17 @@
       </div>
 
       <!-- Hero Visual -->
-      <div class="hero-visual">
+      <div class="hero-visual reveal">
         <span class="hero-visual-corner hero-visual-corner--tl"></span>
         <span class="hero-visual-corner hero-visual-corner--tr"></span>
         <span class="hero-visual-corner hero-visual-corner--bl"></span>
         <span class="hero-visual-corner hero-visual-corner--br"></span>
         <div class="hero-visual-header">
           <span>// LIVE.AGENT</span>
-          <span style="color: var(--accent)">● ACTIVE</span>
+          <span class="status-pulse" style="color: var(--accent)">● ACTIVE</span>
         </div>
-        <div class="hero-visual-body">
-          <div class="prompt">$ horizonstone deploy --client=acme</div>
-          <div class="response">→ provisioning agent ...</div>
-          <div class="response">→ ingesting 1,247 docs ...</div>
-          <div class="response">→ training retrieval index ...</div>
-          <div class="success">✓ ready in 4.2s</div>
-          <div class="prompt" style="margin-top: 14px">$ measure --window=30d</div>
+        <div class="hero-visual-body" id="terminal-body">
+          <!-- Terminal lines will be typed in by JS -->
         </div>
         <div class="hero-chart">
           <svg viewBox="0 0 300 80">
@@ -132,11 +130,11 @@
         <div class="hero-stats">
           <div>
             <div class="hero-stat-label">HOURS SAVED / WEEK</div>
-            <div class="hero-stat-value">42<span style="color: var(--accent)">.</span></div>
+            <div class="hero-stat-value"><span class="counter" data-target="42">0</span><span style="color: var(--accent)">.</span></div>
           </div>
           <div style="text-align: right">
             <div class="hero-stat-label">UPTIME</div>
-            <div class="hero-stat-value hero-stat-value--sm">99.97<span style="font-size: 18px">%</span></div>
+            <div class="hero-stat-value hero-stat-value--sm"><span class="counter" data-target="99.97" data-decimals="2">0</span><span style="font-size: 18px">%</span></div>
           </div>
         </div>
       </div>
@@ -161,11 +159,11 @@
 <!-- ============================================================ -->
 <section id="services" class="services">
   <div class="container">
-    <div class="section-label">
+    <div class="section-label reveal">
       <span class="section-label-num">§ 01</span>
       <span>Services</span>
     </div>
-    <div class="services-header">
+    <div class="services-header reveal">
       <h2 class="h2-section">
         Four things<br />we do <em class="italic-accent">well.</em>
       </h2>
@@ -174,7 +172,7 @@
         your team, deployed in your environment, and priced before we start.
       </p>
     </div>
-    <div class="services-grid">
+    <div class="services-grid reveal">
       <div class="service-card">
         <div class="service-card-head">
           <span class="service-card-num">01</span>
@@ -240,7 +238,7 @@
 <!-- ============================================================ -->
 <section id="process" class="process">
   <div class="container">
-    <div class="section-label">
+    <div class="section-label reveal">
       <span class="section-label-num">§ 02</span>
       <span>How we work</span>
     </div>
@@ -248,7 +246,7 @@
       From "we should look into AI"<br />
       to <em class="italic-accent">shipping in 8 weeks.</em>
     </h2>
-    <div class="process-grid">
+    <div class="process-grid reveal">
       <div class="process-step">
         <div class="process-dot"></div>
         <div class="process-meta"><span>01</span><span>Week 0</span></div>
@@ -290,7 +288,7 @@
       <span class="section-label-num">§ 03</span>
       <span>Selected work</span>
     </div>
-    <div class="cases-header">
+    <div class="cases-header reveal">
       <h2 class="h2-section">
         Real systems,<br />
         <em class="italic-accent">real numbers.</em>
@@ -299,7 +297,7 @@
         Client names withheld under NDA. Metrics measured 30–90 days post-launch.
       </p>
     </div>
-    <div class="cases-list">
+    <div class="cases-list reveal">
       <a href="#" class="case-row">
         <div class="case-sector">Healthcare</div>
         <div>
