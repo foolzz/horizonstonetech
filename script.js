@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let w, h;
     const PARTICLE_COUNT = 60;
     const CONNECTION_DIST = 180;
-    const accentRGB = { r: 111, g: 168, b: 220 }; // --accent #6FA8DC
+    const accentRGB = { r: 14, g: 165, b: 233 }; // --accent #0ea5e9
 
     function resize() {
       w = canvas.width = window.innerWidth;

@@ -10,8 +10,11 @@
   --ink-3: #4A5568;
   --line: rgba(226, 232, 240, 0.10);
   --line-2: rgba(226, 232, 240, 0.18);
-  --accent: #6FA8DC;
-  --accent-2: #8FBDE8;
+  --accent: #0ea5e9;
+  --accent-2: #38bdf8;
+  --accent-glow: rgba(14, 165, 233, 0.4);
+  --glass: rgba(255, 255, 255, 0.02);
+  --glass-hover: rgba(255, 255, 255, 0.05);
   --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
   --sans: "Geist", -apple-system, "Inter", system-ui, sans-serif;
   --mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
@@ -161,22 +164,30 @@ img { max-width: 100%; display: block; }
   background: var(--accent);
   color: var(--bg);
   border-color: var(--accent);
+  box-shadow: 0 0 15px -3px var(--accent-glow);
+  border-radius: 6px;
 }
 
 .btn-primary:hover {
   background: var(--accent-2);
   border-color: var(--accent-2);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px -4px var(--accent-glow);
 }
 
 .btn-ghost {
   background: transparent;
   color: var(--ink);
   border-color: var(--line-2);
+  border-radius: 6px;
 }
 
 .btn-ghost:hover {
-  border-color: var(--ink-3);
-  background: color-mix(in oklab, var(--ink) 5%, transparent);
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--glass-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.3);
 }
 
 .btn-sm {
@@ -417,18 +428,28 @@ img { max-width: 100%; display: block; }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  gap: 24px;
 }
 
 .service-card {
   padding: 44px 40px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
   flex-direction: column;
   gap: 24px;
   min-height: 360px;
+  transition: transform 300ms ease, box-shadow 300ms ease, background 300ms ease, border-color 300ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  background: var(--glass-hover);
+  box-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.5), 0 0 15px -5px var(--accent-glow);
+  border-color: color-mix(in oklab, var(--accent) 40%, transparent);
 }
 
 .service-card-head {
@@ -596,16 +617,23 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: 120px 1.4fr 2fr 200px 30px;
   gap: 32px;
-  padding: 44px 0;
+  padding: 44px 24px;
+  margin: 0 -24px;
   border-bottom: 1px solid var(--line-2);
+  border-radius: 16px;
   align-items: center;
   cursor: pointer;
   background: transparent;
-  transition: background 200ms ease;
+  transition: all 300ms ease;
 }
 
 .case-row:hover {
-  background: color-mix(in oklab, var(--accent) 6%, transparent);
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: scale(1.01);
+  border-color: transparent;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.4);
 }
 
 .case-sector {
@@ -942,10 +970,7 @@ img { max-width: 100%; display: block; }
   transform: translateY(0);
 }
 
-/* Service card hover glow */
-.service-card:hover {
-  box-shadow: inset 0 0 60px -20px rgba(111, 168, 220, 0.08);
-}
+/* Service card hover glow replaced by enhanced glassmorphism */
 
 /* Stagger process steps */
 .process-grid .process-step {
@@ -976,13 +1001,13 @@ img { max-width: 100%; display: block; }
 
 /* Process dot glow */
 .process-dot {
-  box-shadow: 0 0 8px 2px rgba(111, 168, 220, 0.4);
+  box-shadow: 0 0 8px 2px var(--accent-glow);
   animation: dotGlow 3s ease-in-out infinite;
 }
 
 @keyframes dotGlow {
-  0%, 100% { box-shadow: 0 0 8px 2px rgba(111, 168, 220, 0.4); }
-  50% { box-shadow: 0 0 16px 4px rgba(111, 168, 220, 0.7); }
+  0%, 100% { box-shadow: 0 0 8px 2px var(--accent-glow); }
+  50% { box-shadow: 0 0 16px 4px rgba(14, 165, 233, 0.7); }
 }
 
 /* Terminal cursor blink */
@@ -1016,10 +1041,7 @@ img { max-width: 100%; display: block; }
   100% { top: 100%; }
 }
 
-/* Button hover glow */
-.btn-primary:hover {
-  box-shadow: 0 0 20px rgba(111, 168, 220, 0.3);
-}
+/* Button hover glow applied above in component CSS */
 
 /* Corner tick glow animation */
 .hero-visual-corner--tl,
