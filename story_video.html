@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizonstone Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #182235;
+    --accent: #0ea5e9;
+    --ink: #F1F5F9;
+    --serif: "Instrument Serif", serif;
+    --sans: "Geist", sans-serif;
+  }
+  body, html {
+    margin: 0; padding: 0;
+    width: 100vw; height: 100vh;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .scene {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 1s ease, transform 1s ease;
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  .scene.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: 80px;
+    margin: 0 0 20px 0;
+    font-weight: 400;
+  }
+  h1 .accent {
+    color: var(--accent);
+    font-style: italic;
+  }
+  p {
+    font-size: 32px;
+    max-width: 800px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.7);
+    margin: 0;
+  }
+  .metric {
+    font-family: var(--serif);
+    font-size: 140px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="scene" id="scene1">
+  <p style="font-family: 'Geist Mono', monospace; color: var(--accent); font-size: 20px; letter-spacing: 0.2em; margin-bottom: 30px;">THE REALITY OF AI</p>
+  <h1>A shipping company<br>wanted <span class="accent">AI.</span></h1>
+  <p>50 employees. Fast-moving logistics. Big ambitions.</p>
+</div>
+
+<div class="scene" id="scene2">
+  <h1>But the barrier wasn't <span class="accent">technology.</span></h1>
+  <p>It was scattered data, paper workflows, and unstructured operations. You can't put AI on a broken foundation.</p>
+</div>
+
+<div class="scene" id="scene3">
+  <h1>Phase 1: <span class="accent">The Foundation</span></h1>
+  <p>Over 12 months, we fully digitized their workflows. We turned messy spreadsheets and emails into a rock-solid data layer.</p>
+</div>
+
+<div class="scene" id="scene4">
+  <h1>Phase 2: <span class="accent">The AI Hookup</span></h1>
+  <p>With clean data, we integrated a custom Model Context Protocol (MCP) service, allowing their customers to interact with their operations instantly.</p>
+</div>
+
+<div class="scene" id="scene5">
+  <div class="metric">+30%</div>
+  <h1>Performance <span class="accent">Boost</span></h1>
+  <p>The lesson? The barrier to AI isn't the AI.<br>It's the foundation.</p>
+</div>
+
+<script>
+  const scenes = document.querySelectorAll('.scene');
+  let current = 0;
+  
+  function nextScene() {
+    scenes.forEach(s => s.classList.remove('active'));
+    if (current < scenes.length) {
+      scenes[current].classList.add('active');
+      current++;
+      setTimeout(nextScene, 4500); // 4.5 seconds per scene
+    }
+  }
+
+  // Start sequence
+  setTimeout(nextScene, 500);
+</script>
+
+</body>
+</html>
