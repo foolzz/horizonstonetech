@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A protected online library for Tibetan texts — Horizonstone Case Study</title>
+  <meta name="description" content="Rare Tibetan books, previously only in print and loose files, now readable on phone and desktop — with protection so the content can&#x27;t simply be copied or downloaded." />
+  <meta property="og:title" content="A protected online library for Tibetan texts — Horizonstone Case Study" />
+  <meta property="og:description" content="Rare Tibetan books, previously only in print and loose files, now readable on phone and desktop — with protection so the content can&#x27;t simply be copied or downloaded." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<canvas id="particle-network" aria-hidden="true"></canvas>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">
+      <img src="../logo_small.png" alt="Horizonstone Icon" height="40" style="object-fit: contain; mix-blend-mode: screen;" />
+      <span class="nav-brand-text">Horizonstone</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="../index.html#services" class="nav-link">Services</a>
+      <a href="../index.html#process" class="nav-link">Process</a>
+      <a href="../index.html#work" class="nav-link">Work</a>
+      <a href="../index.html#about" class="nav-link">About</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Book a call <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="case-page">
+  <div class="container">
+    <a href="../index.html#work" class="case-back">← All work</a>
+    <div class="section-label">
+      <span class="section-label-num">§</span>
+      <span>Case study</span>
+    </div>
+    <div class="eyebrow eyebrow-accent">
+      <span class="eyebrow-rule"></span>
+      Publishing · Digital library — Kathok Library
+    </div>
+    
+    <h1>A protected online library<br />for <em class="italic-accent">Tibetan texts.</em></h1>
+    <p class="case-page-lead">Rare Tibetan books, previously only in print and loose files, now readable on phone and desktop — with protection so the content can&#x27;t simply be copied or downloaded.</p>
+
+    <div class="case-page-stats">
+      <div class="stat-box">
+        <div class="stat-value">EPUB</div>
+        <div class="stat-label">read in the browser</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">AES-256</div>
+        <div class="stat-label">per-user encryption</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">Web + iOS</div>
+        <div class="stat-label">reading sync</div>
+      </div>
+    </div>
+
+    <section class="case-section reveal">
+      <div class="case-section-title">The problem</div>
+      <div class="case-prose"><p>The publisher wanted readers worldwide — including mainland China — to read their Tibetan collection online, on any device, without the books being easy to download and redistribute.</p></div>
+    </section>
+    <section class="case-section reveal">
+      <div class="case-section-title">What we built</div>
+      <div class="case-prose"><ul>
+<li><strong>Reader:</strong> EPUB books open directly in the browser, with Tibetan script support and a mobile-friendly layout that installs to a phone's home screen.</li>
+<li><strong>Protection:</strong> books are encrypted per user; offline downloads are tied to device-specific licenses.</li>
+<li><strong>Library:</strong> personal collections, favorites, and reading progress that syncs across devices.</li>
+<li><strong>Publisher tools:</strong> upload books, edit metadata, and control visibility and download permissions.</li>
+</ul></div>
+    </section>
+    <section class="case-section reveal">
+      <div class="case-section-title">Stack</div>
+      <div class="case-prose">
+        <ul class="service-card-items case-stack">
+          <li>Node.js + Express</li>
+          <li>PostgreSQL</li>
+          <li>React + EPUB.js</li>
+          <li>AES-256 DRM</li>
+          <li>JWT auth</li>
+          <li>Offline-first progress sync</li>
+          <li>Native iOS reader</li>
+          <li>Google Cloud</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
+
+<section id="contact" class="cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="eyebrow eyebrow-accent">
+        <span class="eyebrow-rule"></span>
+        Ready when you are
+      </div>
+      <h2>
+        Tell us where the<br />
+        <em class="italic-accent">bottleneck is.</em>
+      </h2>
+      <p>
+        30 minutes. No deck, no sales script. We listen, ask hard questions,
+        and tell you whether AI is the right tool for your problem — even if the
+        answer is "not yet."
+      </p>
+      <div class="cta-buttons">
+        <a href="mailto:support@horizonstonetech.com" class="btn btn-primary">Email support@horizonstonetech.com <span class="btn-arrow">→</span></a>
+        <a href="../index.html#work" class="btn btn-ghost">See more work <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top: 1px solid var(--line); padding-top: 32px;">
+      <span>© Horizonstone Technology Inc. — All rights reserved.</span>
+      <span><a href="../index.html">← Back to horizonstonetech.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

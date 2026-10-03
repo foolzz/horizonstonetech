@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>From paper delivery orders to a real-time fleet platform — Horizonstone Case Study</title>
+  <meta name="description" content="An air-cargo last-mile carrier ran every delivery on printed sheets and one very busy dispatcher. Over 18 months we digitized the operation one chore at a time — and only then added AI." />
+  <meta property="og:title" content="From paper delivery orders to a real-time fleet platform — Horizonstone Case Study" />
+  <meta property="og:description" content="An air-cargo last-mile carrier ran every delivery on printed sheets and one very busy dispatcher. Over 18 months we digitized the operation one chore at a time — and only then added AI." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<canvas id="particle-network" aria-hidden="true"></canvas>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">
+      <img src="../logo_small.png" alt="Horizonstone Icon" height="40" style="object-fit: contain; mix-blend-mode: screen;" />
+      <span class="nav-brand-text">Horizonstone</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="../index.html#services" class="nav-link">Services</a>
+      <a href="../index.html#process" class="nav-link">Process</a>
+      <a href="../index.html#work" class="nav-link">Work</a>
+      <a href="../index.html#about" class="nav-link">About</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Book a call <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="case-page">
+  <div class="container">
+    <a href="../index.html#work" class="case-back">← All work</a>
+    <div class="section-label">
+      <span class="section-label-num">§</span>
+      <span>Case study</span>
+    </div>
+    <div class="eyebrow eyebrow-accent">
+      <span class="eyebrow-rule"></span>
+      Logistics · Air cargo
+    </div>
+    
+    <h1>From paper delivery orders<br />to a <em class="italic-accent">real-time fleet platform.</em></h1>
+    <p class="case-page-lead">An air-cargo last-mile carrier ran every delivery on printed sheets and one very busy dispatcher. Over 18 months we digitized the operation one chore at a time — and only then added AI.</p>
+
+    <div class="case-page-stats">
+      <div class="stat-box">
+        <div class="stat-value">~1,000</div>
+        <div class="stat-label">delivery orders / month</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">~110k</div>
+        <div class="stat-label">pieces scanned / month</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">5.6×</div>
+        <div class="stat-label">DO growth in 8 months</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">&lt; $50</div>
+        <div class="stat-label">monthly cloud cost</div>
+      </div>
+    </div>
+
+    <section class="case-section reveal">
+      <div class="case-section-title">Where they started</div>
+      <div class="case-prose"><p>Every delivery order was a printed sheet. There was no status until the paper came back. The dispatcher assigned and tracked every driver by hand — by phone and memory — and customers called to ask where their cargo was. Nobody knew for sure.</p>
+<p><strong>There was no data at all:</strong> no progress tracking, no history, no proof of delivery on file. Growth meant hiring more dispatchers, or saying no to work.</p></div>
+    </section>
+    <section class="case-section reveal">
+      <div class="case-section-title">The first step</div>
+      <div class="case-prose"><p>We didn't pitch a platform. We solved one annoying problem, fast — and every step after that removed work somebody was doing by hand that week.</p>
+<ul class="case-timeline">
+<li><span>Week 1</span>A script that checks the airport cargo portal, replacing one-by-one manual AWB lookups.</li>
+<li><span>Wk 2–4</span>A shared AWB tracker: one web page with every shipment, bulk import, user roles and a daily report.</li>
+<li><span>Month 2</span>A driver app with live location and geofencing, so dispatch could see the trucks without calling.</li>
+</ul>
+<p style="margin-top:16px">Paper and software ran side by side for most of 2025 until the team trusted it. In January 2026 they switched over completely.</p></div>
+    </section>
+    <section class="case-section reveal">
+      <div class="case-section-title">18 months, one platform</div>
+      <div class="case-prose"><ul class="case-timeline">
+<li><span>Feb 25</span>Portal scraper + AWB tracker</li>
+<li><span>Mar 25</span>iOS driver app, geofencing, roles</li>
+<li><span>Jul 25</span>Proof-of-delivery PDFs, reports</li>
+<li><span>Sep 25</span>AI email/PDF parsing, AWB scanning</li>
+<li><span>Dec 25</span>Android app, full delivery-order status flow</li>
+<li><span>Jan 26</span>Paper retired — full cutover</li>
+<li><span>May 26</span>Staging, automated tests, customer MCP API</li>
+<li><span>Aug 26</span>Multi-stop routes, pricing, inspections</li>
+</ul></div>
+    </section>
+    <section class="case-section reveal">
+      <div class="case-section-title">Where AI earns its keep</div>
+      <div class="case-prose"><p>Only once the data was digital did AI have something to work with. It's applied to specific chores, not bolted on:</p>
+<ul>
+<li><strong>Reads the inbox.</strong> Pre-alert emails and PDFs are parsed into AWB records, so nobody retypes shipment data.</li>
+<li><strong>Answers questions.</strong> Staff ask in plain English; AI writes a read-only, sandboxed query against live data.</li>
+<li><strong>Talks to customers' AI.</strong> A per-customer MCP endpoint lets their own assistants look up their shipments.</li>
+</ul></div>
+    </section>
+    <section class="case-section reveal">
+      <div class="case-section-title">Before → after</div>
+      <div class="case-prose"><ul>
+<li><strong>Delivery orders:</strong> paper sheets → ~1,000 a month, digital end to end.</li>
+<li><strong>Driver assignment:</strong> dispatcher by phone → live board, rules enforced by the system.</li>
+<li><strong>Shipment status:</strong> customers call and ask → ~10,000 automatic status emails a month, plus 26 customer logins.</li>
+<li><strong>Proof of delivery:</strong> paper, often lost → signed, photographed, archived PDF (7,300+ so far).</li>
+<li><strong>Capacity:</strong> limited by dispatcher hours → 5.6× more delivery orders in 8 months.</li>
+</ul></div>
+    </section>
+    <section class="case-section reveal">
+      <div class="case-section-title">Stack</div>
+      <div class="case-prose">
+        <ul class="service-card-items case-stack">
+          <li>Node.js + Express API</li>
+          <li>PostgreSQL (Neon)</li>
+          <li>SwiftUI iOS driver app</li>
+          <li>Kotlin Android driver app</li>
+          <li>Gemini email &amp; PDF parsing</li>
+          <li>MCP server for customers</li>
+          <li>Google Cloud App Engine</li>
+          <li>Playwright + Jest</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
+
+<section id="contact" class="cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="eyebrow eyebrow-accent">
+        <span class="eyebrow-rule"></span>
+        Ready when you are
+      </div>
+      <h2>
+        Tell us where the<br />
+        <em class="italic-accent">bottleneck is.</em>
+      </h2>
+      <p>
+        30 minutes. No deck, no sales script. We listen, ask hard questions,
+        and tell you whether AI is the right tool for your problem — even if the
+        answer is "not yet."
+      </p>
+      <div class="cta-buttons">
+        <a href="mailto:support@horizonstonetech.com" class="btn btn-primary">Email support@horizonstonetech.com <span class="btn-arrow">→</span></a>
+        <a href="../index.html#work" class="btn btn-ghost">See more work <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top: 1px solid var(--line); padding-top: 32px;">
+      <span>© Horizonstone Technology Inc. — All rights reserved.</span>
+      <span><a href="../index.html">← Back to horizonstonetech.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
